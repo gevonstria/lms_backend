@@ -21,6 +21,25 @@ services:
     profiles:
       - local
 
+  app-prod:
+    container_name: lms_backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
+    volumes:
+      - ./lms_backend:/lms_backend
+    stdin_open: true
+    tty: true
+    depends_on:
+      - db
+    restart: always
+    profiles:
+      - prod
+
   db:
     container_name: lms_backend_postgresql
     image: postgres:14.1-alpine
