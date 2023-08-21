@@ -28,6 +28,7 @@ DEBUG = os.environ['DEBUG'] == 'TRUE'
 
 ALLOWED_HOSTS = (os.environ['ALLOWED_HOSTS']).split(",")
 CSRF_TRUSTED_ORIGINS = (os.environ['CSRF_TRUSTED_ORIGINS']).split(",")
+CORS_ALLOWED_ORIGINS = (os.environ['CORS_ALLOWED_ORIGINS']).split(",")
 
 # Application definition
 
